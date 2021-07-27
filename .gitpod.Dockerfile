@@ -30,7 +30,15 @@ RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
 RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
   && nix-env -i git git-lfs
 
+# Install lorri
+RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
+  && nix-env -i lorri
+
 # Install direnv
 RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
   && nix-env -i direnv \
   && direnv hook bash >> /home/gitpod/.bashrc
+
+# Install niv
+RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
+  && nix-env -i niv
